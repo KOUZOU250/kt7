@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html" charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ブログ</title>
+    <meta name="description" content="このWebサイトは、初めてHTMLで作るブログページです。">
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+
+body{
+    width: 100%;
+    max-width: 800px;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(128, 157, 71);
+    padding: 10px;
+    text-align: center;
+           }
+   div{
+   background-color: rgb(247, 248, 245);    
+   padding: 2em;
+
+  } 
+script{
+  margin-top: 12em;
+}  
+p {
+  margin-left: 2em;
+  text-align: left;
+  font-size: 25px;
+  font-weight: bold;
+  color: rgb(10, 10, 10);
+}
+form {
+  
+  font-size: 25px;
+  font-weight: bold;
+  color: red;
+}
+input {
+    font-size: 20px;
+}
+</style>
+
+  </head>
+
+  <body>
+    <div class="v_line_fix">
+      <h1>Blog K・T</h1>
+      <img id="mypic" src="hand.jpg" width="560" height="420">
+    
+    <script>
+    var pics_src = new Array("hand.jpg","picture2.jpg","picture3.jpg","picture4.jpg"
+    ,"picture5.jpg","picture6.jpg","picture7.jpg","picture8.jpg",)
+    var num = -1;
+
+    slideshow_timer();
+
+    function slideshow_timer(){
+        if (num == 7){
+            num = 0;
+        } 
+        else {
+            num ++;
+        }
+        document.getElementById("mypic").src=pics_src[num];
+        setTimeout("slideshow_timer()",6000); 
+    }
+    </script>
+
+
+<p>みなさん。趣味、仕事、家族、人生観、日記、将来の夢、</p>
+<p>希望、スポーツ、楽しかったり悲しかった思い出、恋愛、</p>
+<p>旅行での出来事等々カテゴリーは沢山あると思います。</p>
+<p>思い思いの文章を書いてください。</p>
+<p>私。みなさんの投稿を読むのを心待ちにしております。</p>
+<p>ジャンルは自由です。</p>
+<p>ぜひ、お書きください。</p>
+<br>
+<p>書いてくださった方の３つの特典。</p>
+<p>1.ほかの執筆者と心を共有できます。</p>
+<p>2.思い出として残ります。</p>
+<p>3.心が癒されます。そして成長します。</p>
+
+<p>by K・T</p>
+    
+
+<!--入力画面-->
+<form action = “Blog.php” method = “post”>
+    <label class="label" for="name">お名前（ニックネーム）</label>
+    <center><input id="name" type="text" name="name"></center>
+    <label class="label" for="e-mail">メール</label>
+    <input id="e-mail" type="e-mail" name="e-mail">
+    
+    <label class="label" for="category">カテゴリー</label>
+    <input id="category" type="category" name="categoryl">
+    
+    <label class="label" for="message">本文</label>
+
+    <textarea name="area1" style="color:rgb(8, 8, 8);
+     font-size:100%;" cols="50" rows="30">
+            
+            </textarea><br>       
+
+    <input type="submit" name="confiem" value="確認">
+
+    
+
+        
+  </form>
+</div>  
+  <style>
+  label, input[type=text]{
+   display:block;
+  }
+  </style>
+
+</body>
+
+</html>
